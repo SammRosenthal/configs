@@ -2,4 +2,7 @@ vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 
 require("catppuccin").setup()
 
-vim.cmd [[colorscheme catppuccin]]
+-- also has a lualine setting for catppuccin
+-- vim.cmd [[colorscheme catppuccin]]
+-- vim.cmd [[colorscheme oxocarbon]]
+

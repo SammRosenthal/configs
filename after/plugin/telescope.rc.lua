@@ -4,7 +4,7 @@ local builtin = require("telescope.builtin")
 
 telescope.setup({
   defaults = {
-    file_ignore_patterns = { "node_modules", "temp", ".git" },
+    file_ignore_patterns = { "node_modules", "temp", ".git", "dist", "build" },
   },
   find_files = {
     theme = "dropdown",

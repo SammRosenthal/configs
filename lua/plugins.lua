@@ -30,9 +30,10 @@ packer.startup(function(use)
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
   use 'lewis6991/gitsigns.nvim'
-  use 'ghifarit53/tokyonight-vim'
-  use { 'catppuccin/nvim', as = 'catppuccin' }
   use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
   use 'onsails/lspkind.nvim'
-end)
 
+  use 'folke/tokyonight.nvim'
+  use { 'catppuccin/nvim', as = 'catppuccin' }
+  use { 'shaunsingh/oxocarbon.nvim', run = './install.sh' }
+end)
