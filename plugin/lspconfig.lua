@@ -21,7 +21,7 @@ local function baseConfig(_config)
       -- show hover window with diagnostic info
       vim.keymap.set('n', '<leader>d', function() vim.diagnostic.goto_next() end)
       -- show hover window with diagnostic info
-      -- vim.keymap.set('n', '<leader>D', function() vim.diagnostic.open_float() end)
+      vim.keymap.set('n', '<leader>D', function() vim.diagnostic.open_float() end)
     end,
     apply = true,
   }, _config or {})

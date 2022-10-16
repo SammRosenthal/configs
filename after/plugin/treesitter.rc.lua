@@ -22,6 +22,7 @@ ts.setup {
     "html",
     "lua",
     "go",
+    "rust",
   },
   autotag = {
     enable = true,

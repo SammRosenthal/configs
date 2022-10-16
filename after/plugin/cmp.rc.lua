@@ -10,15 +10,6 @@ local source_mapping = {
   path = "[Path]",
 }
 
-local tabnine = require("cmp_tabnine.config")
-tabnine:setup({
-  max_lines = 1000,
-  max_num_results = 20,
-  sort = true,
-  run_on_every_keystroke = true,
-  snippet_placeholder = "..",
-})
-
 cmp.setup({
   snippet = {
     expand = function(args)
@@ -26,12 +17,12 @@ cmp.setup({
     end,
   },
   mapping = cmp.mapping.preset.insert({
-    ['<Tab>'] = function()
+    ['<C-j>'] = function()
       if cmp.visible() then
         cmp.select_next_item()
       end
     end,
-    ['<S-Tab>'] = function()
+    ['<C-k>'] = function()
       if cmp.visible() then
         cmp.select_prev_item()
       end
@@ -40,6 +31,8 @@ cmp.setup({
       behavior = cmp.ConfirmBehavior.Replace,
       select = true
     }),
+    ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+		["<C-d>"] = cmp.mapping.scroll_docs(4),
   }),
   formatting = {
     format = function(entry, vim_item)
@@ -50,17 +43,27 @@ cmp.setup({
         if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
           menu = entry.completion_item.data.detail .. " " .. menu
         end
-        vim_item.kind = ""
+        vim_item.kind = ""
       end
       vim_item.menu = menu
       return vim_item
     end,
   },
   sources = cmp.config.sources({
+    { name = 'cmp_tabnine' },
     { name = 'nvim_lsp' },
     { name = 'buffer' },
     { name = 'luasnip' },
   }),
+})
+
+local tabnine = require("cmp_tabnine.config")
+tabnine:setup({
+  max_lines = 1000,
+  max_num_results = 20,
+  sort = true,
+  run_on_every_keystroke = true,
+  snippet_placeholder = "..",
 })
 
 vim.cmd [[
