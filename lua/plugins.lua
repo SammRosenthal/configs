@@ -27,6 +27,7 @@ packer.startup(function(use)
     'nvim-telescope/telescope.nvim', tag = '0.1.x',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
+  use {'nvim-telescope/telescope-ui-select.nvim' }
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
   use 'lewis6991/gitsigns.nvim'

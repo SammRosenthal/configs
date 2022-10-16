@@ -4,12 +4,15 @@ local builtin = require("telescope.builtin")
 
 telescope.setup({
   defaults = {
-    file_ignore_patterns = { "node_modules", "temp", ".git", "dist", "build" },
+    file_ignore_patterns = { "node_modules", "temp", ".git", "dist", "build", "target" },
   },
   find_files = {
     theme = "dropdown",
   }
 })
+
+-- UI for code actions etc...
+telescope.load_extension("ui-select")
 
 -- find files
 vim.keymap.set('n', '<leader>ff',
@@ -65,7 +68,7 @@ vim.keymap.set('n', '<leader>gc', function()
 end)
 
 -- show list of issues in current file
-vim.keymap.set('n', '<leader>d', function()
+vim.keymap.set('n', '<leader>D', function()
   builtin.diagnostics();
 end)
 

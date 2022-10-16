@@ -18,6 +18,10 @@ local function baseConfig(_config)
       vim.keymap.set('n', 'K', function() vim.lsp.buf.hover() end)
       -- refactor rename in your curr file
       vim.keymap.set('n', 'rr', function() vim.lsp.buf.rename() end)
+      -- show hover window with diagnostic info
+      vim.keymap.set('n', '<leader>d', function() vim.diagnostic.goto_next() end)
+      -- show hover window with diagnostic info
+      -- vim.keymap.set('n', '<leader>D', function() vim.diagnostic.open_float() end)
     end,
     apply = true,
   }, _config or {})
@@ -91,10 +95,12 @@ end
 
 vim.diagnostic.config({
   virtual_text = {
-    prefix = '●'
+    prefix = '>'
   },
   update_in_insert = true,
   float = {
     source = "always", -- Or "if_many"
   },
 })
+
+
