@@ -38,6 +38,7 @@ nvim_lsp.eslint.setup(baseConfig({
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
 }))
 
+
 -- lua
 nvim_lsp.sumneko_lua.setup(baseConfig({
   settings = {
@@ -69,6 +70,9 @@ nvim_lsp.gopls.setup(baseConfig({
   },
 }))
 
+-- JSON
+nvim_lsp.jsonls.setup(baseConfig())
+
 -- rust
 -- cmd = { "rustup", "run", "nightly", "rust-analyzer" },
 nvim_lsp.rust_analyzer.setup(baseConfig())
@@ -81,7 +85,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
   underline = true,
   update_in_insert = false,
-  virtual_text = { spacing = 2, prefix = "●" },
+  virtual_text = { spacing = 2, prefix = " -- " },
   severity_sort = true,
 }
 )
