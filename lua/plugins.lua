@@ -25,7 +25,10 @@ packer.startup(function(use)
   -- syntax highlighting and file parsing
   use {
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
+    run = function()
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      ts_update()
+    end,
   }
 
   -- Easy to use LSP config (This can get replaced by native nvim stuff soon TM)
@@ -66,5 +69,4 @@ packer.startup(function(use)
   -- Themes
   use 'folke/tokyonight.nvim'
   use { 'catppuccin/nvim', as = 'catppuccin' }
-  use { 'shaunsingh/oxocarbon.nvim', run = './install.sh' }
 end)
