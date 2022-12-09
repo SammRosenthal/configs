@@ -13,7 +13,7 @@ local function baseConfig(_config)
       -- run code action
       vim.keymap.set('n', '<leader>fi', function() vim.lsp.buf.code_action() end)
       -- format file
-      vim.keymap.set('n', '<leader>FF', function() vim.lsp.buf.formatting_sync() end)
+      vim.keymap.set('n', '<leader>FF', function() vim.lsp.buf.format({ async = true }) end)
       -- show hover help
       vim.keymap.set('n', 'K', function() vim.lsp.buf.hover() end)
       -- refactor rename in your curr file
@@ -106,5 +106,3 @@ vim.diagnostic.config({
     source = "always", -- Or "if_many"
   },
 })
-
-
