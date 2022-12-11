@@ -48,6 +48,9 @@ packer.startup(function(use)
   -- Gives Telescope like UI for non Telescope actions like code actions
   use { 'nvim-telescope/telescope-ui-select.nvim' }
 
+  -- handles sorting for search results
+  use { 'nvim-telescope/telescope-fzy-native.nvim' }
+
   -- nice info line at bottom of vim window
   use 'nvim-lualine/lualine.nvim'
 
@@ -69,5 +72,5 @@ packer.startup(function(use)
   -- Themes
   use 'folke/tokyonight.nvim'
   use { 'catppuccin/nvim', as = 'catppuccin' }
-  use { 'rose-pine/neovim', as ='rose-pine' }
+  use { 'rose-pine/neovim', as = 'rose-pine' }
 end)

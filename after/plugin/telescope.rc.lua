@@ -14,6 +14,9 @@ telescope.setup({
 -- UI for code actions etc...
 telescope.load_extension("ui-select")
 
+-- sorts results from searches
+telescope.load_extension('fzy_native')
+
 -- find files
 vim.keymap.set('n', '<leader>ff',
   function()
