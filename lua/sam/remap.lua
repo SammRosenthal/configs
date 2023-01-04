@@ -18,3 +18,7 @@ vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
 
 vim.keymap.set("n", "Q", "<nop>")
+
+vim.keymap.set("n", "<C-j>", ":cn<CR>")
+vim.keymap.set("n", "<C-k>", ":cp<CR>")
+vim.keymap.set("n", "<C-q>", ":ccl<CR>")
