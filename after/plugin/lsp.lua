@@ -8,6 +8,8 @@ lsp.ensure_installed({
   'sumneko_lua',
   'rust_analyzer',
   'gopls',
+  'pyright',
+  'clangd',
 })
 
 -- Fix Undefined global 'vim'
