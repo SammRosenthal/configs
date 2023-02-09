@@ -21,4 +21,4 @@ vim.keymap.set("n", "Q", "<nop>")
 
 vim.keymap.set("n", "<C-j>", ":cn<CR>")
 vim.keymap.set("n", "<C-k>", ":cp<CR>")
-vim.keymap.set("n", "<C-q>", ":ccl<CR>")
+vim.keymap.set("n", "<C-Enter>", ":ccl<CR>")

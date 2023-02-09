@@ -111,7 +111,7 @@ _G.packer_plugins = {
   },
   ["gitsigns.nvim"] = {
     loaded = true,
-    path = "/Users/sam/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    path = "/Users/samros/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
   ["lsp-zero.nvim"] = {
@@ -121,7 +121,7 @@ _G.packer_plugins = {
   },
   ["lualine.nvim"] = {
     loaded = true,
-    path = "/Users/sam/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    path = "/Users/samros/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["mason-lspconfig.nvim"] = {
@@ -141,7 +141,7 @@ _G.packer_plugins = {
   },
   ["nvim-comment"] = {
     loaded = true,
-    path = "/Users/sam/.local/share/nvim/site/pack/packer/start/nvim-comment",
+    path = "/Users/samros/.local/share/nvim/site/pack/packer/start/nvim-comment",
     url = "https://github.com/terrortylor/nvim-comment"
   },
   ["nvim-lspconfig"] = {
@@ -157,7 +157,7 @@ _G.packer_plugins = {
   ["nvim-web-devicons"] = {
     loaded = false,
     needs_bufread = false,
-    path = "/Users/sam/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
+    path = "/Users/samros/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
@@ -185,6 +185,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/samros/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
+  },
+  ["vim-commentary"] = {
+    loaded = true,
+    path = "/Users/samros/.local/share/nvim/site/pack/packer/start/vim-commentary",
+    url = "https://github.com/tpope/vim-commentary"
   },
   ["vim-fugitive"] = {
     loaded = true,
