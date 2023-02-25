@@ -23,6 +23,8 @@ return require('packer').startup(function(use)
     end
   })
 
+  use('jose-elias-alvarez/null-ls.nvim')
+
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
