@@ -22,6 +22,7 @@ return require('packer').startup(function(use)
     end
   })
 
+  use('martinsione/darkplus.nvim')
   use('jose-elias-alvarez/null-ls.nvim')
 
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
