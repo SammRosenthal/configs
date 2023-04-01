@@ -22,6 +22,8 @@ return require('packer').startup(function(use)
     end
   })
 
+	use("shortcuts/no-neck-pain.nvim", { tag = "*" })
+
   use('martinsione/darkplus.nvim')
   use('jose-elias-alvarez/null-ls.nvim')
 
