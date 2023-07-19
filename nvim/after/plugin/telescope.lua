@@ -1,4 +1,6 @@
-local builtin = require('telescope.builtin')
+local builtin = require("telescope.builtin")
+local actions = require("telescope.actions")
+local telescope = require("telescope")
 
 vim.keymap.set('n', '<leader>ff', builtin.git_files, {})
 vim.keymap.set('n', '<leader>?', builtin.oldfiles, {})
