@@ -21,7 +21,7 @@ return require('packer').startup(function(use)
       vim.cmd('colorscheme rose-pine')
     end
   })
-
+	use("catppuccin/nvim", { as = "catppuccin" })
   use('martinsione/darkplus.nvim')
   use('jose-elias-alvarez/null-ls.nvim')
 
