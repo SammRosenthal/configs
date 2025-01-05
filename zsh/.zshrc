@@ -101,19 +101,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls="ls -al"
 alias vim="nvim"
-alias p="pnpm"
+alias lg="lazygit"
 
-# theme
-# -----------------
-# starship
-# eval "$(starship init zsh)"
-#
-#
 # Globals
 # -------------------
 
-
-# pnpm
-export PNPM_HOME="/Users/sam/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
