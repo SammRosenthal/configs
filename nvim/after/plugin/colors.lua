@@ -1,14 +1,3 @@
-function ColorMyPencils(color)
-	color = color
-	vim.cmd.colorscheme(color)
-
-	-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-end
-
--- ColorMyPencils('darkplus')
-ColorMyPencils('rose-pine')
-
 require("catppuccin").setup({
 	flavour = "mocha", -- latte, frappe, macchiato, mocha
 	background = { -- :h background
@@ -54,5 +43,11 @@ require("catppuccin").setup({
 	},
 })
 
--- setup must be called before loading
-vim.cmd.colorscheme("catppuccin")
+function ColorMyPencils(color)
+	color = color
+	vim.cmd.colorscheme(color)
+end
+
+-- ColorMyPencils('darkplus')
+-- ColorMyPencils('rose-pine')
+ColorMyPencils("github_dark_default")
