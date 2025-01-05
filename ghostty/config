@@ -1,0 +1,5 @@
+theme = Github Dark
+font-family = Osaka-Mono
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
