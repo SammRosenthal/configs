@@ -11,14 +11,14 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set("x", "<leader>p", "\"_dP")
+vim.keymap.set("x", "<leader>p", '"_dP')
 
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>Y", "\"+Y")
+vim.keymap.set("n", "<leader>y", '"+y')
+vim.keymap.set("v", "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>Y", '"+Y')
 
 vim.keymap.set("n", "Q", "<nop>")
 
-vim.keymap.set("n", "<C-j>", ":cn<CR>")
-vim.keymap.set("n", "<C-k>", ":cp<CR>")
+vim.keymap.set("n", "<C-n>", ":cn<CR>")
+vim.keymap.set("n", "<C-p>", ":cp<CR>")
 vim.keymap.set("n", "<C-Enter>", ":ccl<CR>")
