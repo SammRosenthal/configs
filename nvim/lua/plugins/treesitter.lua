@@ -14,7 +14,7 @@ return {
       indent = { enable = true },
       auto_install = true,
       ensure_installed = {
-        "c", "lua", "rust", "javascript", "typescript", "svelte", "astro", "css", "tsx", "java"
+        "c", "lua", "rust", "javascript", "typescript", "svelte", "astro", "css", "tsx"
       },
     })
   end

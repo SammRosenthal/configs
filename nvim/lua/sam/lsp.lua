@@ -8,7 +8,6 @@ vim.lsp.config("ts_ls", require("lsp.ts_ls"))
 vim.lsp.config("luals", require("lsp.luals"))
 vim.lsp.config("tailwind", require("lsp.tailwind"))
 vim.lsp.config("eslint", require("lsp.eslint"))
--- jdtls is handled by nvim-jdtls plugin
 
 -- Enable
 vim.lsp.enable("ts_ls")

@@ -11,7 +11,7 @@ here shows any drift.
 Each folder has a README listing what that config sets up: keymaps, aliases,
 plugins, and the commands worth remembering.
 
-- [nvim](nvim/README.md): keymaps, LSP, completion, formatting, debugging, Java
+- [nvim](nvim/README.md): keymaps, LSP, completion, formatting, debugging
 - [zsh](zsh/README.md): aliases, oh-my-zsh plugins, environment, local secrets
 - [ghostty](ghostty/README.md): theme, font, Shift+Enter, CLI commands
 - [lazygit](lazygit/README.md): key cheat sheet
@@ -117,18 +117,6 @@ up by hand on each machine.
 
    ```bash
    npm i -g typescript typescript-language-server vscode-langservers-extracted @tailwindcss/language-server
-   ```
-
-   Java uses `jdtls` and Temurin 21 from the Brewfile. For debugging, build
-   `java-debug` (it isn't in Homebrew) into the path `nvim/ftplugin/java.lua`
-   expects:
-
-   ```bash
-   git clone https://github.com/microsoft/java-debug ~/.local/share/java-debug
-   ```
-
-   ```bash
-   cd ~/.local/share/java-debug && ./mvnw clean install -DskipTests
    ```
 
 10. **Re-auth CLIs.** These keep credentials in `~/.config` and are

@@ -10,8 +10,6 @@ brew "gh"
 brew "git-delta"
 # Open-source GitLab command-line tool
 brew "glab"
-# Java language specific implementation of the Language Server Protocol
-brew "jdtls"
 # Simple terminal UI for git commands
 brew "lazygit"
 # Language Server for the Lua language
@@ -61,8 +59,6 @@ cask "notunes"
 cask "orbstack"
 # Toolbox companion for QMK Firmware
 cask "qmk-toolbox"
-# JDK from the Eclipse Foundation (Adoptium)
-cask "temurin@21"
 # Multimedia player
 cask "vlc"
 vscode "anthropic.claude-code"

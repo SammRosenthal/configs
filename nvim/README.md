@@ -32,7 +32,7 @@ Fuzzy matching uses fzf-native (`telescope-fzf-native.nvim`, built with `make`).
 
 ## LSP (`lua/sam/lsp.lua`)
 
-Servers: `ts_ls`, `eslint`, `tailwind`, `luals`, plus `jdtls` for Java (see below).
+Servers: `ts_ls`, `eslint`, `tailwind`, `luals`.
 
 | Keys                      | Does                         |
 | ------------------------- | ---------------------------- |
@@ -110,23 +110,6 @@ keymaps.
 | `<leader>du`  | Toggle the DAP UI       |
 
 The DAP UI opens and closes with the debug session.
-
-## Java (`ftplugin/java.lua`, Java buffers only)
-
-| Keys          | Mode   | Does                                  |
-| ------------- | ------ | ------------------------------------- |
-| `<leader>jr`  | normal | `mvn spring-boot:run`                 |
-| `<leader>jt`  | normal | `mvn test`                            |
-| `<leader>jb`  | normal | `mvn clean install`                   |
-| `<leader>jo`  | normal | Organize imports                      |
-| `<leader>ju`  | normal | Reload project config (after `pom.xml` changes) |
-| `<leader>jv`  | visual | Extract variable                      |
-| `<leader>jm`  | visual | Extract method                        |
-
-The project root is the top-level Maven aggregator `pom.xml` (one with
-`<modules>`), falling back to `.git`/`mvnw`/`gradlew`. Each project gets its own
-JDTLS workspace under `~/.local/share/nvim/jdtls-workspace/`. The debugger needs
-`java-debug` built locally (see the root README).
 
 ## Plugins (lazy.nvim)
 

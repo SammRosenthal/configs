@@ -39,15 +39,13 @@
 | ---------- | ------------------------------------------------------------------------- |
 | Editor     | `EDITOR` and `VISUAL` are `nvim`                                          |
 | Node       | nvm. `cd` into a folder with `.nvmrc` and it switches (installing if missing); leaving it switches back to the default |
-| pnpm       | Homebrew `pnpm@8` comes first on PATH, then `pnpm@9`                       |
-| Java       | `JAVA_HOME` set to Temurin 21 when it's installed                         |
+| pnpm       | Homebrew `pnpm`; global installs go to `~/Library/pnpm`                   |
 | bun        | `~/.bun/bin` on PATH, with completions                                    |
-| PATH extras | `~/bin`, `~/.local/bin`, sonarqube-cli                                   |
+| PATH extras | `~/.local/bin` (e.g. the `claude` CLI)                                   |
 | ssh        | No agent is started; the macOS keychain agent handles keys (`UseKeychain` in `~/.ssh/config`) |
 
 ## Local settings and secrets
 
 `~/.config/zsh/local.zsh` is sourced last and never committed. Put tokens and
-machine-specific overrides there. [local.zsh.example](local.zsh.example) lists
-what it currently holds: the Jira API token, and the Claude Code Bedrock
-switch and token limits.
+machine-specific overrides there, such as tools installed only on this
+machine. [local.zsh.example](local.zsh.example) shows the shape.
