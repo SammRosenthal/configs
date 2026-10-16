@@ -1,0 +1,26 @@
+[user]
+	name = Sam Rosenthal
+	email = samrrosenthal@gmail.com
+	signingkey = ~/.ssh/id_ed25519_signing.pub
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[merge]
+	ff = no
+[pull]
+	ff = no
+[core]
+	pager = delta
+	excludesfile = ~/.gitignore
+[delta]
+	line-numbers = true
+	syntax-theme = Monokai Extended
+
+# Auto-apply work identity inside the Scholastic workspace.
+[includeIf "gitdir:~/code/work/scholastic/"]
+	path = ~/.gitconfig-work
+[includeIf "gitdir:~/code/work/scholastic/**"]
+	path = ~/.gitconfig-work

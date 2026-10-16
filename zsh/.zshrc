@@ -82,11 +82,8 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+export EDITOR="nvim"
+export VISUAL="$EDITOR"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -101,8 +98,88 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls="ls -al"
 alias vim="nvim"
+alias p="pnpm"
 alias lg="lazygit"
 
+# theme
+# -----------------
+# starship
+# eval "$(starship init zsh)"
+#
+#
 # Globals
 # -------------------
+#
+# Java
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home"
+export PATH="$JAVA_HOME/bin:$PATH"
 
+# Enable Bedrock integration
+export CLAUDE_CODE_USE_BEDROCK=0
+export AWS_REGION=us-east-1
+#
+# Recommended output token settings for Bedrock
+export CLAUDE_CODE_MAX_OUTPUT_TOKENS=16384
+export MAX_THINKING_TOKENS=1024
+
+# pnpm
+export PNPM_HOME="/Users/sam/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# bun completions
+[ -s "/Users/sam/.bun/_bun" ] && source "/Users/sam/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# start ssh agent
+eval $(ssh-agent)
+
+# bit
+case ":$PATH:" in
+  *":/Users/sam/bin:"*) ;;
+  *) export PATH="$PATH:/Users/sam/bin" ;;
+esac
+# bit end
+export PATH="/opt/homebrew/opt/pnpm@9/bin:$PATH"
+export PATH="/opt/homebrew/opt/pnpm@8/bin:$PATH"
+export PATH="/opt/homebrew/opt/pnpm@8/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local nvmrc_path
+  nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version
+    nvmrc_node_version="$(nvm version "$(<"${nvmrc_path}")")"
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
+      nvm use
+    fi
+  elif [ "$(nvm version default)" != "$(nvm version)" ]; then
+    nvm use default >/dev/null
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+
+export PATH="$HOME/.local/bin:$PATH"
+
+# opencode
+export PATH=/Users/sam/.opencode/bin:$PATH
+export OPENCODE_DISABLE_CLAUDE_CODE_SKILLS=1
+
+# Added by sonarqube-cli installer
+export PATH="$HOME/.local/share/sonarqube-cli/bin:$PATH"

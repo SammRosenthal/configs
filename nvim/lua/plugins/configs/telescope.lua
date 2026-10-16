@@ -1,25 +1,12 @@
-local telescope = require("telescope")
+pcall(require("telescope").load_extension, "fzf")
+
 local builtin = require("telescope.builtin")
 local actions = require("telescope.actions")
 local finders = require("telescope.finders")
 local pickers = require("telescope.pickers")
 local sorters = require("telescope.sorters")
-local conf = require("telescope.config").values
 local make_entry = require("telescope.make_entry")
-
-require("telescope").load_extension("fzf")
-
-telescope.setup({
-  defaults = {
-    mappings = {
-      i = { ["<C-q>"] = actions.send_to_qflist },
-      n = { ["<C-q>"] = actions.send_to_qflist },
-    },
-  },
-  extensions = {
-    fzf = {},
-  },
-})
+local conf = require("telescope.config").values
 
 local live_multigrep = function(opts)
   opts = opts or {}
@@ -68,6 +55,8 @@ local live_multigrep = function(opts)
   }):find()
 end
 
+-- vim.keymap.set("n", "<C-q>", actions.send_to_qflist)
+-- vim.keymap.set("n", "<C-q>", actions.send_to_qflist)
 vim.keymap.set("n", "<leader>ff", builtin.find_files)
 vim.keymap.set("n", "<leader>?", builtin.oldfiles)
 vim.keymap.set("n", "<leader>fw", builtin.live_grep)

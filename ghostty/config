@@ -3,3 +3,5 @@ font-family = Osaka-Mono
 font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
+
+keybind = shift+enter=text:\x1b\r

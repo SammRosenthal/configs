@@ -1,0 +1,28 @@
+# Lazy.nvim plugin directory
+lazy-lock.json
+
+# LSP and plugin data
+.cache/
+.local/
+plugin/
+
+# DAP (debugger) data
+.dap/
+
+# Compiled Python files (if using Python plugins)
+*.pyc
+__pycache__/
+
+# OS files
+.DS_Store
+
+# Swap files (should not exist due to config, but just in case)
+*.swp
+*.swo
+*.swn
+
+# Undo files
+.vim/undodir/
+
+# Java/JDTLS workspace data
+.jdtls/
