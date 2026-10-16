@@ -38,14 +38,9 @@ link() {
 
 # source (repo-relative)     target
 link zsh/.zshrc              "$HOME/.zshrc"
-link git/gitconfig           "$HOME/.gitconfig"
-link git/ignore              "$HOME/.config/git/ignore"
 link nvim                    "$HOME/.config/nvim"
 link ghostty/config          "$HOME/.config/ghostty/config"
 link lazygit/config.yml      "$HOME/.config/lazygit/config.yml"
-link opencode/opencode.json  "$HOME/.config/opencode/opencode.json"
-link opencode/plugins        "$HOME/.config/opencode/plugins"
-link zed/settings.json       "$HOME/.config/zed/settings.json"
 
 # Ghostty on macOS also reads this file, after the XDG one, so it would override
 # the linked config. Move it out of the way.
@@ -62,7 +57,6 @@ seed() {
   fi
 }
 seed zsh/local.zsh.example       "$HOME/.config/zsh/local.zsh"
-seed git/gitconfig-work.example  "$HOME/.gitconfig-work"
 
 # nvim persistent undo (see nvim/lua/sam/set.lua)
 run mkdir -p "$HOME/.vim/undodir"

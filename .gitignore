@@ -2,7 +2,6 @@
 
 # Machine-specific / secret files (see *.example)
 zsh/local.zsh
-git/gitconfig-work
 
 # nvim runtime state
 nvim/.claude/

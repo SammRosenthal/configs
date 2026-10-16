@@ -42,8 +42,7 @@
 | pnpm       | Homebrew `pnpm@8` comes first on PATH, then `pnpm@9`                       |
 | Java       | `JAVA_HOME` set to Temurin 21 when it's installed                         |
 | bun        | `~/.bun/bin` on PATH, with completions                                    |
-| PATH extras | `~/bin`, `~/.local/bin`, `~/.opencode/bin`, sonarqube-cli               |
-| opencode   | `OPENCODE_DISABLE_CLAUDE_CODE_SKILLS=1`                                   |
+| PATH extras | `~/bin`, `~/.local/bin`, sonarqube-cli                                   |
 | ssh        | No agent is started; the macOS keychain agent handles keys (`UseKeychain` in `~/.ssh/config`) |
 
 ## Local settings and secrets

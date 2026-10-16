@@ -125,6 +125,5 @@ go "honnef.co/go/tools/cmd/staticcheck"
 go "golang.org/x/website/tour"
 npm "@anthropic-ai/claude-code"
 npm "corepack"
-# Installed outside Homebrew on the original machine; configs live in this repo
+# Installed outside Homebrew on the original machine; config lives in this repo
 cask "ghostty"
-cask "zed"

@@ -1,6 +1,6 @@
 # configs
 
-Personal macOS dotfiles: zsh, Neovim, git, Ghostty, lazygit, opencode, and Zed.
+Personal macOS dotfiles: zsh, Neovim, Ghostty and lazygit.
 
 The repo lives at `~/code/configs`, and `install.sh` symlinks each config into
 place. Editing a config in its normal location edits the repo, so `git status`
@@ -13,34 +13,25 @@ plugins, and the commands worth remembering.
 
 - [nvim](nvim/README.md): keymaps, LSP, completion, formatting, debugging, Java
 - [zsh](zsh/README.md): aliases, oh-my-zsh plugins, environment, local secrets
-- [git](git/README.md): signing, merge behaviour, delta, work identity, global ignore
 - [ghostty](ghostty/README.md): theme, font, Shift+Enter, CLI commands
 - [lazygit](lazygit/README.md): key cheat sheet
-- [opencode](opencode/README.md): settings and plugins
-- [zed](zed/README.md): settings
 
 ## Layout
 
 | Repo path                | Linked to                              |
 | ------------------------ | -------------------------------------- |
 | `zsh/.zshrc`             | `~/.zshrc`                             |
-| `git/gitconfig`          | `~/.gitconfig`                         |
-| `git/ignore`             | `~/.config/git/ignore` (global ignore) |
 | `nvim/`                  | `~/.config/nvim`                       |
 | `ghostty/config`         | `~/.config/ghostty/config`             |
 | `lazygit/config.yml`     | `~/.config/lazygit/config.yml`         |
-| `opencode/opencode.json` | `~/.config/opencode/opencode.json`     |
-| `opencode/plugins/`      | `~/.config/opencode/plugins`           |
-| `zed/settings.json`      | `~/.config/zed/settings.json`          |
 | `Brewfile`               | used by `brew bundle`                  |
 
-Machine-specific values and secrets are **never committed**. They go in local
-files that `install.sh` creates from the committed examples:
+Machine-specific values and secrets are **never committed**. They go in
+`~/.config/zsh/local.zsh`, which `install.sh` creates from
+[zsh/local.zsh.example](zsh/local.zsh.example).
 
-| Local file                  | Template                      | Holds                          |
-| --------------------------- | ----------------------------- | ------------------------------ |
-| `~/.config/zsh/local.zsh`   | `zsh/local.zsh.example`       | API tokens, Bedrock settings   |
-| `~/.gitconfig-work`         | `git/gitconfig-work.example`  | Work git identity              |
+Git config (`~/.gitconfig`, `~/.config/git/ignore`) isn't tracked here; set it
+up by hand on each machine.
 
 ## Setting up a new machine
 
@@ -109,9 +100,11 @@ files that `install.sh` creates from the committed examples:
    Anything already at a target path is moved to `~/.config-backup/<timestamp>/`.
    The script is safe to re-run.
 
-8. **Fill in the local files** that `install.sh` created: `~/.config/zsh/local.zsh`
-   and `~/.gitconfig-work`. Get the values from your password manager. Then
-   open a new shell.
+8. **Fill in `~/.config/zsh/local.zsh`**, which `install.sh` created, with values
+   from your password manager. Then open a new shell.
+
+   Set up git by hand too: `~/.gitconfig` (identity, SSH commit signing) and
+   `~/.config/git/ignore`.
 
 9. **Neovim.** Open `nvim`. lazy.nvim bootstraps itself and installs all plugins
    at the versions pinned in `nvim/lazy-lock.json`. Plugins never update on
@@ -154,9 +147,8 @@ files that `install.sh` creates from the committed examples:
   brew bundle dump --file ~/code/configs/Brewfile --force
   ```
 
-  The dump drops the hand-added `ghostty` and `zed` casks at the bottom if
-  they aren't Homebrew-installed, so re-add them afterwards.
+  The dump drops the hand-added `ghostty` cask at the bottom if Ghostty isn't
+  Homebrew-installed, so re-add it afterwards.
 
-- **Neovim plugin versions:** `lazy-lock.json` is gitignored, and plugins
-  auto-update on startup (`nvim/lua/config/lazy.lua`). Machines therefore run
-  whatever the latest plugin versions are rather than pinned ones.
+- **Neovim plugin versions** are pinned in `nvim/lazy-lock.json`. After
+  `:Lazy update`, commit the lockfile so other machines get the same versions.

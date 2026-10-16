@@ -165,10 +165,6 @@ fi
 
 export PATH="$HOME/.local/bin:$PATH"
 
-# opencode
-export PATH="$HOME/.opencode/bin:$PATH"
-export OPENCODE_DISABLE_CLAUDE_CODE_SKILLS=1
-
 # sonarqube-cli
 export PATH="$HOME/.local/share/sonarqube-cli/bin:$PATH"
 

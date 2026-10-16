@@ -4,7 +4,7 @@
 
 - **Theme:** GitHub Dark.
 - **Font:** Osaka-Mono with ligatures turned off (`-calt`, `-liga`, `-dlig`).
-- **Shift+Enter** sends `Esc` + `Enter`. Claude Code and opencode read that as a
+- **Shift+Enter** sends `Esc` + `Enter`. Claude Code reads that as a
   newline in the prompt rather than "submit".
 
 ## Handy

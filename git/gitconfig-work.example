@@ -1,4 +1,0 @@
-# Work identity overlay, included by ~/.gitconfig via [includeIf "gitdir:..."].
-# Copy to ~/.gitconfig-work and fill in.
-[user]
-	email = <work email>
