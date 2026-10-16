@@ -6,6 +6,19 @@ The repo lives at `~/code/configs`, and `install.sh` symlinks each config into
 place. Editing a config in its normal location edits the repo, so `git status`
 here shows any drift.
 
+## Quick reference
+
+Each folder has a README listing what that config sets up: keymaps, aliases,
+plugins, and the commands worth remembering.
+
+- [nvim](nvim/README.md): keymaps, LSP, completion, formatting, debugging, Java
+- [zsh](zsh/README.md): aliases, oh-my-zsh plugins, environment, local secrets
+- [git](git/README.md): signing, merge behaviour, delta, work identity, global ignore
+- [ghostty](ghostty/README.md): theme, font, Shift+Enter, CLI commands
+- [lazygit](lazygit/README.md): key cheat sheet
+- [opencode](opencode/README.md): settings and plugins
+- [zed](zed/README.md): settings
+
 ## Layout
 
 | Repo path                | Linked to                              |
