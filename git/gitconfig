@@ -14,13 +14,11 @@
 	ff = no
 [core]
 	pager = delta
-	excludesfile = ~/.gitignore
 [delta]
 	line-numbers = true
 	syntax-theme = Monokai Extended
 
-# Auto-apply work identity inside the Scholastic workspace.
-[includeIf "gitdir:~/code/work/scholastic/"]
-	path = ~/.gitconfig-work
+# Auto-apply work identity inside the work workspace (~/.gitconfig-work is
+# untracked; see git/gitconfig-work.example).
 [includeIf "gitdir:~/code/work/scholastic/**"]
 	path = ~/.gitconfig-work

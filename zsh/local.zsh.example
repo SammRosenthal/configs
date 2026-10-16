@@ -1,0 +1,15 @@
+# Machine-specific zsh settings and secrets.
+# Copy to ~/.config/zsh/local.zsh and fill in. Sourced at the end of ~/.zshrc.
+# NEVER commit the real file.
+
+# ---------- Atlassian / Jira ----------
+# Used by Atlassian skills, scripts, and agents that talk to Jira.
+# Create at: https://id.atlassian.com/manage-profile/security/api-tokens
+export JIRA_API_TOKEN="<from password manager>"
+
+# ---------- Claude Code on Bedrock ----------
+# 1 routes Claude Code through AWS Bedrock, 0 uses the Anthropic API.
+export CLAUDE_CODE_USE_BEDROCK=0
+export AWS_REGION=us-east-1
+export CLAUDE_CODE_MAX_OUTPUT_TOKENS=16384
+export MAX_THINKING_TOKENS=1024
