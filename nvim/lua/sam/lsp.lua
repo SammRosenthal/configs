@@ -1,3 +1,8 @@
+-- Shared defaults for all servers
+vim.lsp.config("*", {
+  capabilities = require("cmp_nvim_lsp").default_capabilities(),
+})
+
 -- Register configs
 vim.lsp.config("ts_ls", require("lsp.ts_ls"))
 vim.lsp.config("luals", require("lsp.luals"))

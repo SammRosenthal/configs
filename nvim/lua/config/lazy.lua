@@ -30,9 +30,3 @@ require("lazy").setup({
   -- Configure any other settings here. See the documentation for more details.
   checker = { enabled = true, notify = false },
 })
-
-vim.api.nvim_create_autocmd("VimEnter", {
-  callback = function()
-    require("lazy").update({ show = false })
-  end,
-})

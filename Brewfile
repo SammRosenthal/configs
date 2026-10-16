@@ -40,6 +40,9 @@ brew "python@3.10"
 brew "redis"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Neovim formatters (used by conform.nvim)
+brew "prettierd"
+brew "stylua"
 # LSP for TailwindCSS
 brew "tailwindcss-language-server"
 # Terminal multiplexer

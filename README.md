@@ -100,21 +100,30 @@ files that `install.sh` creates from the committed examples:
    and `~/.gitconfig-work`. Get the values from your password manager. Then
    open a new shell.
 
-9. **Neovim.** Open `nvim`. lazy.nvim bootstraps itself and installs all plugins.
-   Language servers and formatters aren't managed by Neovim, so install the ones
-   you need:
+9. **Neovim.** Open `nvim`. lazy.nvim bootstraps itself and installs all plugins
+   at the versions pinned in `nvim/lazy-lock.json`. Plugins never update on
+   their own: run `:Lazy update` when you want newer versions, then commit the
+   lockfile. On a machine that has drifted, `:Lazy restore` goes back to the
+   pinned versions.
+
+   Language servers and formatters aren't managed by Neovim. The Brewfile covers
+   `lua-language-server`, `stylua` and `prettierd`; install the rest with:
 
    ```bash
    npm i -g typescript typescript-language-server vscode-langservers-extracted @tailwindcss/language-server
    ```
 
+   Java uses `jdtls` and Temurin 21 from the Brewfile. For debugging, build
+   `java-debug` (it isn't in Homebrew) into the path `nvim/ftplugin/java.lua`
+   expects:
+
    ```bash
-   brew install lua-language-server stylua
+   git clone https://github.com/microsoft/java-debug ~/.local/share/java-debug
    ```
 
-   Java uses `jdtls` and Temurin 21 from the Brewfile. Java debugging isn't set
-   up yet: `nvim/ftplugin/java.lua` looks for `java-debug` under
-   `/opt/homebrew/opt/java-debug`, but that isn't a Homebrew formula.
+   ```bash
+   cd ~/.local/share/java-debug && ./mvnw clean install -DskipTests
+   ```
 
 10. **Re-auth CLIs.** These keep credentials in `~/.config` and are
     intentionally not tracked: `gh auth login`, `glab auth login`, `acli`, and
